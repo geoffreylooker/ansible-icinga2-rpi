@@ -1,11 +1,17 @@
 # This is the ansible 'hosts' file.
 [local]
-127.0.0.1 ansible_ssh_port=22 ansible_ssh_user=root
+127.0.0.1 ansible_port=22 ansible_user=pi
+#127.0.0.1 ansible_port=22 ansible_user=root
 
-[cassandra]
-centos-es-02
+[icinga2]
+icinga2
 
-[trucmuch]
-centos-es-01
-centos-es-02
-centos-es-03
+[icingaweb2]
+icinga2
+
+[mailserver]
+icinga2
+
+[graphite]
+icinga2
+
