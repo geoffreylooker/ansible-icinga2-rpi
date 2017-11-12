@@ -1,0 +1,23 @@
+---
+# This Playbook would deploy the whole  cluster 
+
+- hosts: all
+  roles:
+  - role: common
+
+- hosts: icinga2_servers
+  roles:
+  - role: icinga2
+
+- hosts: icingaweb2_servers
+  roles:
+  - role: icingaweb2
+  - role: mailserver
+
+- hosts: graphite_servers
+  roles:
+  - role: graphite
+
+#- hosts: mongo_servers
+#  tasks:
+#  - include: roles/mongod/tasks/shards.yml
