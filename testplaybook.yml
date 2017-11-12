@@ -1,0 +1,12 @@
+---
+- name: Install and setup a datastax cassandra node on rhel7
+  hosts: raspberrypi
+  vars_files:
+    - vars/vars.yml
+  gather_facts: True
+
+  tasks:
+    # Displaying all variables/facts known for host {{ inventory_hostname }}
+    #- debug: var=hostvars[inventory_hostname]
+    - debug: var=hostvars[inventory_hostname]['ansible_enp0s3']['ipv4']['address']
+    #- debug: var=hostvars[inventory_hostname]['ansible_default_ipv4']['address']
