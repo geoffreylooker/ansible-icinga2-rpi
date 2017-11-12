@@ -1,0 +1,21 @@
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+#user=mysql
+user=root
+password="{{ mysql_root_pass }}"
+# Disabling symbolic-links to prevent security risks
+symbolic-links=0
+port={{ mysql_port }}
+
+[mysqld_safe]
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+
+[client]
+user="{{ mysql_root_user }}"
+password="{{ mysql_root_pass }}"
+
+[mysql]
+user="{{ mysql_root_user }}"
+password="{{ mysql_root_pass }}"
